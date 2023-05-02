@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background: #6DA6C5;         
+        }
+
+        .container {
+            display: flex; 
+        }
+        
+        @media screen and (max-width: 450px) {
+            .container {
+                flex-direction: column; 
+            }
+        } 
+
+        .container div {             
+            flex-basis: 0; 
+            flex-grow: 1; 
+            border: solid #66101F 5px;
+            border-radius: 5%;
+            margin: 10px;
+            padding: 5px;
+            background: #eeffdb;            
+        } 
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img src="https://images.pexels.com/photos/808465/pexels-photo-808465.jpeg" alt="landscape" width="100%">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, mollitia!
+        </div>
+        <div>
+            <img src="https://images.pexels.com/photos/730981/pexels-photo-730981.jpeg" alt="landscape" width="100%">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, mollitia!        
+        </div>
+        <div>
+            <img src="https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg" alt="landscape" width="100%">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, mollitia!
+        </div>
+    </div>           
+</body>
+</html>
