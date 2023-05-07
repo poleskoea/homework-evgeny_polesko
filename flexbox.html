@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>flexbox</title>
+            <style>
+                .inline {
+                    display: inline-block;
+                }
+                .container {
+                    width: 600px;
+                    background-color: bisque;
+                    margin: 30px;
+                    padding: 10px;
+                    display: flex;
+
+                    flex-direction:row-reverse;
+                    justify-content: center;
+                }
+                .item {
+                    background-color: rgb(47, 174, 111);
+                    color: white;
+                    margin: 10px;
+                    padding: 20px;
+                    font-size: 35px;
+                    width: 100px;
+                    height: 100px;
+                }
+                .positions > * {
+                    border: solid red 5px;
+                }
+                .relative {
+                    position: relative;
+                    top: 35px;
+                    left: 80px;
+                    z-index: 3;
+                    opacity: .8;
+                }
+                .absolute {
+                    position: absolute;
+                    left: 200px;
+                    top: 600px;
+                    z-index: 2;
+                    opacity: .8;
+                }
+                .fixed {
+                    position: fixed;
+                    left: 140px;
+                    top: 670px;
+                    z-index: 0;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="inline">
+                <div class="inline item">1</div>
+                <div class="inline item">2</div>
+            </div>
+            
+            <div class="container">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </div>
+
+            <div class="positions">
+                <div class="item">static</div>
+                <div class="relative item">relative</div>
+                <div class="absolute item">absolute</div>
+                <div class="fixed item">fixed</div>
+            </div>
+        </body>
+</html>
