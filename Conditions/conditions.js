@@ -1,7 +1,7 @@
 /*Задайте вопрос с помощью prompt(). Запишите ответ в переменную. Проверьте правильность ответа. Покажите alert() в зависимости от правильности ответа.
 Составьте небольшой квиз.*/
 
-let question1 = prompt("Capital of Great Britain?").toLowerCase();
+let question1 = prompt("Capital of Great Britain?").toLowerCase().trim();
 let correct = false;
 while (!correct) {
   if (question1 === "london") {
@@ -9,10 +9,10 @@ while (!correct) {
     alert("🏆Correct!🎉");
   } else {
     alert("👿 Nyet! 👿 Try again! 👿");
-    question1 = prompt("Capital of Great Britain? 😈").toLowerCase();
+    question1 = prompt("Capital of Great Britain? 😈").toLowerCase().trim();
   }
 }
-let question2 = prompt("Capital of Germany?").toLowerCase();
+let question2 = prompt("Capital of Germany?").toLowerCase().trim();
 correct = false;
 while (!correct) {
   if (question2 === "berlin") {
@@ -23,7 +23,7 @@ while (!correct) {
     question2 = prompt("Capital of Germany? 😈").toLowerCase();
   }
 }
-let question3 = prompt("Capital of Norway?").toLowerCase();
+let question3 = prompt("Capital of Norway?").toLowerCase().trim();
 correct = false;
 while (!correct) {
   if (question3 === "oslo") {
@@ -31,6 +31,6 @@ while (!correct) {
     alert("🏆Correct!🎉");
   } else {
     alert("👿 Nyet! 👿 Try again! 👿");
-    question3 = prompt("Capital of Norway? 😈").toLowerCase();
+    question3 = prompt("Capital of Norway? 😈").toLowerCase().trim();
   }
 }
