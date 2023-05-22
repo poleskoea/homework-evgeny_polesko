@@ -59,18 +59,17 @@ const ingrPrices = {
 };
 
 const countCost = function (dish) {
-  let cost = 0;
+  dish.cost = 0;
   for (let i = 0; i < dish.ingredients.length; i++) {
     const ingr = dish.ingredients[i];
-    cost += ingrPrices[ingr];
+    dish.cost += ingrPrices[ingr];
   }
-  dish.cost = cost;
 };
-
-countCost(sagudai);
-countCost(sushi);
-countCost(borsch);
-countCost(pancakes);
+for (dish of foodArray) countCost(dish);
+// countCost(sagudai);
+// countCost(sushi);
+// countCost(borsch);
+// countCost(pancakes);
 console.log(foodArray);
 
 let totalProfit = 0;
