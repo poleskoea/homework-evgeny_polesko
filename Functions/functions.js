@@ -9,12 +9,12 @@ console.log(smallerNumber(4, 0));
 // 2. Напишите функцию, которая будет считать профит от продажи блюда из прошлого задания. В эту функцию должны передаваться все данные для расчета профита, результат расчетов присвойте в объект блюда.
 
 // Если стоимость уже посчитана
-const calcProfit = function (dish) {
+const calcDishProfit = function (dish) {
   return dish.price - dish.cost;
 };
 
 // Если стоимость ещё не посчитана
-const calcProfit2 = function (dish, ingrPrices) {
+const calcDishProfit2 = function (dish, ingrPrices) {
   let cost = 0;
   for (ingredient of dish.ingredients) {
     cost += ingrPrices[ingredient];
