@@ -59,7 +59,7 @@ const ingrPrices = {
 };
 
 for (dish of foodArray) {
-  dish.profit = calcProfit2(dish, ingrPrices);
+  dish.profit = calcDishProfit2(dish, ingrPrices);
 }
 console.log(foodArray);
 /// OOP
