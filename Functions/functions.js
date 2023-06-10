@@ -9,18 +9,19 @@ console.log(smallerNumber(4, 0));
 // 2. Напишите функцию, которая будет считать профит от продажи блюда из прошлого задания. В эту функцию должны передаваться все данные для расчета профита, результат расчетов присвойте в объект блюда.
 
 // Если стоимость уже посчитана
-const countProfit = function (dish) {
-  dish.profit = dish.price - dish.cost;
+const calcProfit = function (dish) {
+  return dish.price - dish.cost;
 };
 
 // Если стоимость ещё не посчитана
-const countProfit2 = function (dish, ingredientsPrice) {
-  dish.cost = 0;
+const calcProfit2 = function (dish, ingrPrices) {
+  let cost = 0;
   for (ingredient of dish.ingredients) {
-    dish.cost += ingredientsPrice[ingredient];
+    cost += ingrPrices[ingredient];
   }
-  dish.profit = dish.price - dish.cost;
-  console.log(`Profit from ${dish.dishName} = ${dish.profit}`);
+  const profit = dish.price - cost;
+  console.log(`Profit from ${dish.dishName} = ${profit}`);
+  return profit;
 };
 
 let borsch = {
@@ -58,5 +59,40 @@ const ingrPrices = {
 };
 
 for (dish of foodArray) {
-  countProfit2(dish, ingrPrices);
+  dish.profit = calcProfit2(dish, ingrPrices);
 }
+console.log(foodArray);
+/// OOP
+class Dish {
+  cost = 0;
+  profit = 0;
+  constructor(name, ingredients, price) {
+    this.name = name;
+    this.ingredients = ingredients;
+    this.price = price;
+  }
+  calcCost(ingrPrices) {
+    for (ingredient of this.ingredients) {
+      this.cost += ingrPrices[ingredient];
+    }
+    return this.cost;
+  }
+  calcProfit() {
+    this.profit = this.price - this.cost;
+    return this.profit;
+  }
+  set newPrice(newPrice) {
+    this.price = newPrice;
+  }
+}
+
+const sushi = new Dish(
+  "Sushi",
+  ["salmon", "rice", "salt", "nori", "water"],
+  450
+);
+sushi.calcCost(ingrPrices);
+sushi.calcProfit();
+console.log(sushi);
+sushi.newPrice = 500;
+console.log(sushi);
