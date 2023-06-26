@@ -62,6 +62,7 @@ for (dish of foodArray) {
   dish.profit = calcDishProfit2(dish, ingrPrices);
 }
 console.log(foodArray);
+
 /// OOP
 class Dish {
   cost = 0;
