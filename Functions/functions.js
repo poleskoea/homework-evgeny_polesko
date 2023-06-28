@@ -2,16 +2,6 @@
 import calcProfit from "../Scripts/calcProfit.js";
 import smallerNumber from "/JS React course by Arsalan/Scripts/smallerNumber.js";
 
-// 2. Напишите функцию, которая будет считать профит от продажи блюда из прошлого задания. В эту функцию должны передаваться все данные для расчета профита, результат расчетов присвойте в объект блюда.
-
-// Если стоимость уже посчитана
-// const calcDishProfit = function (dish) {
-//   return dish.price - dish.cost;
-// };
-
-// Если стоимость ещё не посчитана
-// Using imported function
-
 let borsch = {
   dishName: "Borsch",
   ingredients: ["meat", "cabbage", "beetroot", "carrot", "water", "tomato"],
