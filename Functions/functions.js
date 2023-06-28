@@ -1,28 +1,16 @@
-// 1. Напишите функцию принимающую два числа и возвращающую меньшее из них.
-const smallerNumber = function (a, b) {
-  return a < b ? a : b;
-};
-console.log(smallerNumber(4, 7));
-console.log(smallerNumber(4, -7));
-console.log(smallerNumber(4, 0));
+// Import of the calcProfit fucntion
+import calcProfit from "../Scripts/calcProfit.js";
+import smallerNumber from "/JS React course by Arsalan/Scripts/smallerNumber.js";
 
 // 2. Напишите функцию, которая будет считать профит от продажи блюда из прошлого задания. В эту функцию должны передаваться все данные для расчета профита, результат расчетов присвойте в объект блюда.
 
 // Если стоимость уже посчитана
-const calcDishProfit = function (dish) {
-  return dish.price - dish.cost;
-};
+// const calcDishProfit = function (dish) {
+//   return dish.price - dish.cost;
+// };
 
 // Если стоимость ещё не посчитана
-const calcDishProfit2 = function (dish, ingrPrices) {
-  let cost = 0;
-  for (ingredient of dish.ingredients) {
-    cost += ingrPrices[ingredient];
-  }
-  const profit = dish.price - cost;
-  console.log(`Profit from ${dish.dishName} = ${profit}`);
-  return profit;
-};
+// Using imported function
 
 let borsch = {
   dishName: "Borsch",
@@ -58,42 +46,47 @@ const ingrPrices = {
   nori: 60,
 };
 
-for (dish of foodArray) {
-  dish.profit = calcDishProfit2(dish, ingrPrices);
-}
-console.log(foodArray);
+// Using imported functions
+sagudai.profit = calcProfit(sagudai, ingrPrices);
+borsch.profit = calcProfit(borsch, ingrPrices);
+console.log(sagudai, borsch);
+
+console.log(smallerNumber(4, 4));
+console.log(smallerNumber(4, 7));
+console.log(smallerNumber(4, -7));
+console.log(smallerNumber(4, 0));
 
 /// OOP
-class Dish {
-  cost = 0;
-  profit = 0;
-  constructor(name, ingredients, price) {
-    this.name = name;
-    this.ingredients = ingredients;
-    this.price = price;
-  }
-  calcCost(ingrPrices) {
-    for (ingredient of this.ingredients) {
-      this.cost += ingrPrices[ingredient];
-    }
-    return this.cost;
-  }
-  calcProfit() {
-    this.profit = this.price - this.cost;
-    return this.profit;
-  }
-  set newPrice(newPrice) {
-    this.price = newPrice;
-  }
-}
+// class Dish {
+//   cost = 0;
+//   profit = 0;
+//   constructor(name, ingredients, price) {
+//     this.name = name;
+//     this.ingredients = ingredients;
+//     this.price = price;
+//   }
+//   calcCost(ingrPrices) {
+//     for (ingredient of this.ingredients) {
+//       this.cost += ingrPrices[ingredient];
+//     }
+//     return this.cost;
+//   }
+//   calcProfit() {
+//     this.profit = this.price - this.cost;
+//     return this.profit;
+//   }
+//   set newPrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
 
-const sushi = new Dish(
-  "Sushi",
-  ["salmon", "rice", "salt", "nori", "water"],
-  450
-);
-sushi.calcCost(ingrPrices);
-sushi.calcProfit();
-console.log(sushi);
-sushi.newPrice = 500;
-console.log(sushi);
+// const sushi = new Dish(
+//   "Sushi",
+//   ["salmon", "rice", "salt", "nori", "water"],
+//   450
+// );
+// sushi.calcCost(ingrPrices);
+// sushi.calcProfit();
+// console.log(sushi);
+// sushi.newPrice = 500;
+// console.log(sushi);
