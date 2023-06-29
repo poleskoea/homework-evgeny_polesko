@@ -1,6 +1,6 @@
 // Import of the calcProfit fucntion
 import calcProfit from "../Scripts/calcProfit.js";
-import smallerNumber from "/JS React course by Arsalan/Scripts/smallerNumber.js";
+import smallerNumber from "../Scripts/smallerNumber.js";
 
 let borsch = {
   dishName: "Borsch",
