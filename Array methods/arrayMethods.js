@@ -53,7 +53,9 @@ console.log(countCost(pancakes, ingrPrices));
 
 // Используйте `map` , чтобы получить массив с объектами в которых содержится только название и стоимость каждого блюда.
 const nameAndPrice = foodArray.map((dish) => {
-  //   return ({ dishName, price } = dish), { dishName, price };
+  //  1) return ({ dishName, price } = dish), { dishName, price };
+
+  // Задался вопросом как оптимально из объекта А скопировать нужные свойства в объект Б, нашёл данный способ. Понимаю, что это restructuring assignment внутри IIFE. Способ 1) немного проще, но создает переменные в global scope
   return (({ dishName, price }) => ({ dishName, price }))(dish);
 });
 console.log(nameAndPrice);
@@ -61,13 +63,11 @@ console.log(foodArray);
 
 // Определите, есть ли в меню хоть одно вегетарианское блюдо, используя `some`
 const checkVegDish = function (dish) {
-  if (
+  return (
     !dish.ingredients.includes("meat") &&
     !dish.ingredients.includes("salmon") &&
     !dish.ingredients.includes("omul")
-  )
-    return true;
-  else return false;
+  );
 };
 
 const haveVegDish = foodArray.some((dish) => checkVegDish(dish));
