@@ -45,38 +45,3 @@ console.log(smallerNumber(4, 4));
 console.log(smallerNumber(4, 7));
 console.log(smallerNumber(4, -7));
 console.log(smallerNumber(4, 0));
-
-/// OOP
-// class Dish {
-//   cost = 0;
-//   profit = 0;
-//   constructor(name, ingredients, price) {
-//     this.name = name;
-//     this.ingredients = ingredients;
-//     this.price = price;
-//   }
-//   calcCost(ingrPrices) {
-//     for (ingredient of this.ingredients) {
-//       this.cost += ingrPrices[ingredient];
-//     }
-//     return this.cost;
-//   }
-//   calcProfit() {
-//     this.profit = this.price - this.cost;
-//     return this.profit;
-//   }
-//   set newPrice(newPrice) {
-//     this.price = newPrice;
-//   }
-// }
-
-// const sushi = new Dish(
-//   "Sushi",
-//   ["salmon", "rice", "salt", "nori", "water"],
-//   450
-// );
-// sushi.calcCost(ingrPrices);
-// sushi.calcProfit();
-// console.log(sushi);
-// sushi.newPrice = 500;
-// console.log(sushi);
