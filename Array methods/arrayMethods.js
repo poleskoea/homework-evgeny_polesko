@@ -52,31 +52,26 @@ const countCost = function (dish, prices) {
 console.log(countCost(pancakes, ingrPrices));
 
 // Используйте `map` , чтобы получить массив с объектами в которых содержится только название и стоимость каждого блюда.
-const nameAndPrice = foodArray.map((dish) => {
-  //  1) return ({ dishName, price } = dish), { dishName, price };
-
-  // Задался вопросом как оптимально из объекта А скопировать нужные свойства в объект Б, нашёл данный способ. Понимаю, что это restructuring assignment внутри IIFE. Способ 1) немного проще, но создает переменные в global scope
-  return (({ dishName, price }) => ({ dishName, price }))(dish);
-});
+const nameAndPrice = foodArray.map(({ dishName, price }) => ({
+  dishName,
+  price,
+}));
 console.log(nameAndPrice);
 console.log(foodArray);
 
 // Определите, есть ли в меню хоть одно вегетарианское блюдо, используя `some`
-const checkVegDish = function (dish) {
-  return (
-    !dish.ingredients.includes("meat") &&
-    !dish.ingredients.includes("salmon") &&
-    !dish.ingredients.includes("omul")
-  );
+const nonVegFood = ["meat", "salmon", "omul"];
+const isVegetarian = function (dish) {
+  return !dish.ingredients.some((ingr) => nonVegFood.includes(ingr));
 };
 
-const haveVegDish = foodArray.some((dish) => checkVegDish(dish));
+const haveVegDish = foodArray.some((dish) => isVegetarian(dish));
 console.log(haveVegDish);
 
 // Определите, полностью ли у вас вегетарианское меню с помощью `every`.
-const vegetarianMenuOnly = foodArray.every((dish) => checkVegDish(dish));
+const vegetarianMenuOnly = foodArray.every((dish) => isVegetarian(dish));
 console.log(vegetarianMenuOnly);
 
 // Создайте массив с вегетарианскими блюдами с помощью filter.
-const vegMenu = foodArray.filter((dish) => checkVegDish(dish));
-console.log(vegMenu);
+const vegetarianMenu = foodArray.filter((dish) => isVegetarian(dish));
+console.log(vegetarianMenu);
