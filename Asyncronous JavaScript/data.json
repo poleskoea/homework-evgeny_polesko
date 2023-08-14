@@ -1,0 +1,52 @@
+{
+  "prices": {
+    "omul": 190,
+    "salt": 10,
+    "oil": 20,
+    "onion": 15,
+    "vinegar": 15,
+    "carrot": 7,
+    "tomato": 10,
+    "beetroot": 12,
+    "water": 0,
+    "cabbage": 16,
+    "meat": 130,
+    "sugar": 20,
+    "flour": 40,
+    "egg": 70,
+    "milk": 20,
+    "salmon": 240,
+    "rice": 50,
+    "nori": 60
+  },
+  "dishes": {
+    "borsch": {
+      "dishName": "Borsch",
+      "ingredients": [
+        "meat",
+        "cabbage",
+        "beetroot",
+        "carrot",
+        "water",
+        "tomato"
+      ],
+      "price": 270
+    },
+    "sagudai": {
+      "dishName": "Sagudai",
+      "ingredients": ["omul", "salt", "oil", "onion", "vinegar"],
+      "price": 300
+    },
+    "sushi": {
+      "dishName": "Sushi",
+      "ingredients": ["salmon", "rice", "salt", "nori", "water"],
+      "price": 450
+    },
+
+    "pancakes": {
+      "dishName": "Pancakes",
+      "ingredients": ["milk", "egg", "flour", "sugar", "salt"],
+      "price": 250
+    }
+  }
+}
