@@ -1,24 +1,5 @@
 {
-  "prices": {
-    "omul": 190,
-    "salt": 10,
-    "oil": 20,
-    "onion": 15,
-    "vinegar": 15,
-    "carrot": 7,
-    "tomato": 10,
-    "beetroot": 12,
-    "water": 0,
-    "cabbage": 16,
-    "meat": 130,
-    "sugar": 20,
-    "flour": 40,
-    "egg": 70,
-    "milk": 20,
-    "salmon": 240,
-    "rice": 50,
-    "nori": 60
-  },
+  
   "dishes": {
     "borsch": {
       "dishName": "Borsch",

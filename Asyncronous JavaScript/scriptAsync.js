@@ -1,15 +1,23 @@
 import calcProfit from "../Scripts/calcProfit.js";
 
-const calcProfit2 = async function () {
+const getJSON = async function (url, errorMsg = "Something went wrong") {
+  const response = await fetch(url);
+
+  if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+  return response.json();
+};
+
+const calcProfitAsync = async function () {
   try {
-    const res = await fetch("./Asyncronous JavaScript/data.json");
-    const data = await res.json();
-    Object.values(data.dishes).map((dish) => {
-      calcProfit(dish, data.prices);
+    const { dishes } = await getJSON("./Asyncronous JavaScript/food.json");
+    const { prices } = await getJSON("./Asyncronous JavaScript/prices.json");
+
+    Object.values(dishes).map((dish) => {
+      calcProfit(dish, prices);
     });
   } catch (err) {
     console.error(err);
   }
 };
 
-calcProfit2();
+calcProfitAsync();
