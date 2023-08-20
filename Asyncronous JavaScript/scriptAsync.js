@@ -9,8 +9,10 @@ const getJSON = async function (url, errorMsg = "Something went wrong") {
 
 const calcProfitAsync = async function () {
   try {
-    const { dishes } = await getJSON("./Asyncronous JavaScript/food.json");
-    const { prices } = await getJSON("./Asyncronous JavaScript/prices.json");
+    const [{ dishes }, { prices }] = await Promise.all([
+      getJSON("./Asyncronous JavaScript/food.json"),
+      getJSON("./Asyncronous JavaScript/prices.json"),
+    ]);
 
     Object.values(dishes).map((dish) => {
       calcProfit(dish, prices);

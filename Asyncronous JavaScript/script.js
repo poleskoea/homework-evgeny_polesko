@@ -8,13 +8,17 @@ const getJSON = function (url, errorMsg = "Something went wrong") {
 };
 
 try {
-  getJSON("./Asyncronous JavaScript/food.json").then((food) => {
-    getJSON("./Asyncronous JavaScript/prices.json").then(({ prices }) => {
+  let food = {};
+  getJSON("./Asyncronous JavaScript/food.json")
+    .then((data) => {
+      food = data;
+      return getJSON("./Asyncronous JavaScript/prices.json");
+    })
+    .then(({ prices }) => {
       Object.values(food.dishes).map((dish) => {
         calcProfit(dish, prices);
       });
     });
-  });
 } catch (err) {
   console.error(err);
 }
